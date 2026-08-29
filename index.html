@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de gastos - ADO 1 - SPA</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="container">
+        <header>
+            <h1>Controle de Gastos Pessoais </h1>
+        </header>
+
+        <main>
+            <section class="summary-container">
+                <div class="card Pagar">
+                    <h3>Total a Pagar</h3>
+                    <p id="Pagar">R$ 0,00</p>
+                </div>
+                <div class="card Recebido">
+                    <h3>Total Recebido</h3>
+                    <p id="Recebido">R$ 0,00</p>
+                </div>
+                <div class="card Restante">
+                    <h3>Saldo Restante</h3>
+                    <p id="Restante">R$ 0,00</p>
+                </div>
+            </section>
+
+            <section class="form-container">
+                <h2>Adicionar Movimentação</h2>
+                <form id="Formulario">
+                    <div class="input-group">
+                        <label for="Descricao">Descrição</label>
+                        <input type="text" id="Descricao" required placeholder="Ex: Conta de Luz, Salário...">
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="quantia">Valor (R$)</label>
+                        <input type="number" id="quantia" required step="0.01" placeholder="Ex: 150.00">
+                    </div>
+
+                    <div class="input-group radio-group">
+                        <label>
+                            <input type="radio" name="type" value="entrada" required> Entrada
+                        </label>
+                        <label>
+                            <input type="radio" name="type" value="saida"> Saída
+                        </label>
+                    </div>
+
+                    <button type="submit">Adicionar</button>
+                </form>
+            </section>
+
+            <section class="transactions-container">
+                <h2>Movimentações</h2>
+<div class="search-container" style="margin-bottom: 20px;">
+    <label for="campoBusca" style="display: block; margin-bottom: 8px; font-weight: 500;">Pesquisar:</label>
+    <input type="search" id="campoBusca" name="q" placeholder="Digite sua busca..." style="width: 100%; padding: 12px 16px; border-radius: 12px; border: 1px solid #ccc; font-size: 1rem;">
+</div>
+                <div class="table-wrapper">
+                    <table id="transactions-table">
+                        <thead>
+                            <tr>
+                                <th>Descrição</th>
+                                <th>Valor</th>
+                                <th>Tipo</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="Lista">
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+</body>
+</html>
